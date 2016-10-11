@@ -1,5 +1,3 @@
-setwd("C:/Users/li.yang/Documents/Projects/Data Scientist/R")
-
 # download and unzip the ZIP data file.
 filename<-"download.zip"
 if (!file.exists(filename)){
@@ -42,4 +40,4 @@ fulldata$subject<-as.factor(fulldata$subject)
 #create the tidy dataset
 library(plyr)
 tidydata<-ddply(fulldata, .(subject, activity), numcolwise(mean))
-write.csv(tidydata, "tidydata.csv")
+write.table(tidydata, "tidydata.txt")
